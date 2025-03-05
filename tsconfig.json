@@ -1,11 +1,13 @@
 {
+ "extends":"./tsconfig.path.json",
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2016",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "moduleDetection": "auto",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +20,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "@stores/*": ["./store/*"],
+      "@packages/*": ["./packages/*"],
+      "@tsTypes/*": ["./type/*"],
+    }
   },
   "include": [
     "src"
-  ]
+  ],
+  
+   
 }
