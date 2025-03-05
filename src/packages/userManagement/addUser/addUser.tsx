@@ -65,9 +65,9 @@ const AddUser = () => {
 
             <Modal show={show} onHide={() => setShow(false)}>
                 <Modal.Header closeButton>
-                    <Modal.Title>User Managment</Modal.Title>
+                    <Modal.Title>Woohoo, you are added user successfully!</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you are added user successfully!</Modal.Body>
+                <Modal.Body> Name: {userData.name} Job{userData.job}, id: {userData.id} createdAt:{userData.createdAt}</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => setShow(false)}>
                         Close

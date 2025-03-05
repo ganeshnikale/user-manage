@@ -10,11 +10,19 @@ export interface UserState {
         error: null | string
     },
     createdUser: {
-        userData: User,
+        userData: UserCreateResponse,
         status: "loading" | "fulfilled" | "rejected",
         error: null | string
     }
 
+}
+
+
+export interface UserCreateResponse {
+    name: string,
+    job: string,
+    id: string,
+    createdAt: string
 }
 
 

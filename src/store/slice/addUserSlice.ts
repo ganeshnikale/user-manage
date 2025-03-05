@@ -1,7 +1,7 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import type { User, UserState, UsetsList } from '@tsTypes/userType';
+import type { User, UserCreateResponse, UserState, UsetsList } from '@tsTypes/userType';
 
 const initState: UserState = {
     allUsers: {
@@ -15,12 +15,14 @@ const initState: UserState = {
     }, createdUser: {
         userData: {
             name: '',
-            job: ''
+            job: '',
+            id: '',
+            createdAt: ''
         }, status: 'loading', error: null
     }
 };
 
-export const createUser = createAsyncThunk<User, User>(
+export const createUser = createAsyncThunk<UserCreateResponse, User>(
     "users/createUser",
     async (user, { rejectWithValue }) => {
         try {
